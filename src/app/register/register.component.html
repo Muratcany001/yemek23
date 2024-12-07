@@ -1,1 +1,91 @@
-<p>register works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Yemek23'e Kaydol</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <!--Header section start-->
+    <header class="header">
+        <a href="#" class="logo">
+            <!-- <img src="images/logo.png" alt="logo" /> -->
+        </a>
+        <nav class="navbar">
+            <a routerLink="/home" >Anasayfa</a> 
+            <a routerLink="/restaurantlar" >Restaurantlar</a> 
+            <a routerLink="/favoriler" >Favori Restaurantlarım</a> 
+            <a routerLink="/iletisim" >İletişim</a> 
+            <a routerLink="/girisyap" >Giriş Yap</a> 
+            <a routerLink="/kaydol" class="active">Kaydol</a> 
+        </nav>
+        <div class="buttons">
+            <button id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+            <div class="search-form">
+                <input type="text" class="search-input" id="search-box" placeholder="Restaurant Ara">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header> 
+    <!--Header section end-->  
+
+    <!--Anasayfa section start-->
+    <section class="anasayfa">
+        <div class="content">
+            <h3>YEMEK23'E HOŞGELDİNİZ !</h3>
+            <p>
+                Elazığda bulunan restaurantları incelemek, onların karşılaştırmalarını görmek ve yemek sipariş etmek istiyorsanız doğru yerdesiniz.
+            </p>
+            <a routerLink="/home" class="btn">Şimdi Başlayın</a>
+        </div>
+    </section>
+    <!--Anasayfa section end-->
+
+    <!--Kaydol start-->
+    <div class="signup-form">
+        <form action="/kaydol">
+            <h1>Kayıt Ol</h1>
+            <input type="text" placeholder="İsim Soyisim" class="txt"> 
+            <input type="email" placeholder="Eposta" class="txt"> 
+            <input type="password" placeholder="Şifre" class="txt"> 
+            <input type="submit" value="Hesap Oluştur" class="signup-btn">
+            <a routerLink="/girisyap">Zaten bir hesabın var mı ?</a>
+        </form>  
+    </div>
+    <!--Kaydol end-->
+
+    <!--Footer start-->
+    <!-- Optional footer section; included if you wish to have footer links -->
+    <!-- <section class="footer">
+        <div class="search">
+            <input type="text" class="search-input" placeholder="Arama Yap">
+            <button class="btn bnt-primary">Arama Yap</button>
+        </div>
+        <div class="share">
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-github"></a>
+        </div>
+        <div class="links">
+            <a routerLink="/home" class="active">Anasayfa</a> 
+            <a routerLink="/restaurantlar">Restaurantlar</a> 
+            <a routerLink="/favoriler">Favori Restaurantlarım</a> 
+            <a routerLink="/iletisim">İletişim</a> 
+            <a routerLink="/girisyap">Giriş Yap/Kaydol</a> 
+        </div>
+        <div class="credit">
+            created by <span>Ömer Efe Peltek</span> | all rights reserved
+        </div>
+    </section> -->
+    <!--Footer end-->
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
