@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { HomeComponent } from './home/home.component';
+import { IndexComponent } from './index/index.component';
 import { SigninComponent } from './signin/signin.component';
 import { RegisterComponent } from './register/register.component';
-import { IndexComponent } from './index/index.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
 
 export const routes: Routes = [
-//   { path: 'home', component: HomeComponent },
-  { path: 'girisyap', component: SigninComponent },
-  { path: 'kaydol', component: RegisterComponent },
+  { path: 'signin', component: SigninComponent },
   { path: 'index', component: IndexComponent },
-  { path: '', redirectTo: '/index', pathMatch: 'full' }
+  { path: 'register', component: RegisterComponent },
+  { path: 'restaurant', component: RestaurantComponent },
+  // { path: '', redirectTo: '/index', pathMatch: 'full' }, // Varsayılan yönlendirme
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, {useHash:true})],
+  exports: [RouterModule]                   
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

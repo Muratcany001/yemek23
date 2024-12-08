@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elazığ'daki en iyi restoranları karşılaştırın ve yemek siparişi verin.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>YEMEK23</title>
+</head>
+<body>
+    <div class="container">
+        <!--Header section start-->
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" alt="Yemek23 Logo">
+            </a>
+            <nav class="navbar">
+                <a routerLink="/index" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Anasayfa</a>
+                <a routerLink="/restaurant" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Restaurantlar</a>
+                <a routerLink="/signin" class="active">Giriş Yap</a>
+                <a routerLink="/register" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Kaydol</a>
+            </nav>
+            <div class="buttons">
+                <button id="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="search-form">
+                    <input type="text" class="search-input" id="search-box" placeholder="Restaurant Ara">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </header>
+        <!--Header section end-->
+
+        <!--Anasayfa section start-->
+        <section class="anasayfa">
+            <div class="content">
+                <h3>YEMEK23'E HOŞGELDİNİZ !</h3>
+                <p>
+                    Elazığda bulunan restaurantları incelemek, onların karşılaştırmalarını görmek ve yemek sipariş etmek istiyorsanız doğru yerdesiniz.
+                </p>
+                <a routerLink="/index" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Şimdi Başlayın</a>
+            </div>
+        </section>
+        <!--Anasayfa section end-->
+
+        <!--RESTAURANTLAR section start-->
+        <section class="restaurantlar" id="Restaurantlarım">
+            <h1 class="heading">Restaurantlar</h1>
+            <div class="box-container">
+                <!-- Burada her bir Restaurant için component oluşturulabilir -->
+                <!-- <div class="box" *ngFor="let restaurant of restaurants">
+                    <div class="box-head">
+                        <img [src]="restaurant.image" alt="{{ restaurant.name }}" width="200">
+                        <h3>{{ restaurant.name }}</h3>
+                        <div class="ücret">Çalışma saatleri: {{ restaurant.hours }}</div>
+                    </div>
+                    <div class="box-bottom">
+                         <button (click)="addToFavorites(restaurant)" class="btn">Favorilere Ekle</button> -->
+                    <!-- </div>
+                </div> -->
+            </div>
+        </section>
+        <!--RESTAURANTLAR section end-->
+
+        <!-- Router outlet for Angular component rendering -->
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
 <router-outlet></router-outlet>

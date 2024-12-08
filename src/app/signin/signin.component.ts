@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-signin',
+  standalone: true,
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']  // Bu stil dosyasını doğru bağladığınızdan emin olun
+  styleUrls: ['./signin.component.css'],
 })
-export class SigninComponent {
-  // Component logic
-}
+export class SigninComponent {}

@@ -4,17 +4,25 @@ import { Component } from '@angular/core';
   selector: 'app-index',
   standalone: true,
   templateUrl: './index.component.html',
-  styleUrl: './index.component.css'
+  styleUrls: ['./index.component.css']  // styleUrl -> styleUrls
 })
 export class IndexComponent {
-
   isSearchedFormActive: boolean = false;
-  toggleSearchFrom (event : MouseEvent):void {
+
+  // Formu toggle etme işlemi
+  toggleSearchForm(event: MouseEvent): void {  // toggleSearchFrom -> toggleSearchForm
     this.isSearchedFormActive = !this.isSearchedFormActive;
     event.stopPropagation();
   }
-  closedSearchForm(): void{
-    this.isSearchedFormActive =false; 
+
+  // Arama formunu kapatma
+  closedSearchForm(): void {
+    this.isSearchedFormActive = false;
   }
-  
+
+  // Favorilere ekleme işlevi
+  addToFavorites(_t34: any) {
+    // Favorilere ekleme işlemi burada yapılacak
+    console.log('Favorilere eklendi:', _t34);
+  }
 }
