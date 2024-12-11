@@ -14,6 +14,5 @@ import {RegisterComponent} from "./register/register.component"
 })
 export class AppComponent {
   title = 'yemek23';
-
-
+  posts:any;
 }
