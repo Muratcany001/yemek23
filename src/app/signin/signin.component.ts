@@ -13,9 +13,9 @@ import { CommonModule } from '@angular/common';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class SigninComponent implements OnInit {
-  mail: string = "";
+  email: string = "";
   password: string = "";
-  errorMessage: string = "componente ulaşılamıyor";
+  errorMessage: string = "";
   
   constructor(
     private apiService: ApiService,
@@ -23,40 +23,34 @@ export class SigninComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.errorMessage = "";
   }
 
   onLogin(): void {
-    // Reset error message
-    this.errorMessage = "";
-
     // Validate inputs
-    if (!this.mail || !this.password) {
+    if (!this.email || !this.password) {
       this.errorMessage = "Email ve şifre gereklidir";
       return;
     }
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(this.mail)) {
+    if (!emailRegex.test(this.email)) {
       this.errorMessage = "Geçerli bir email adresi giriniz";
       return;
     }
 
     const credentials = {
-      mail: this.mail.trim(),
+      mail: this.email.trim(),
       password: this.password
     }
 
     this.apiService.login(credentials).subscribe({
       next: (res) => {
-        // Store token in localStorage
         if (res && res.token) {
           localStorage.setItem('token', res.token);
-          // Use Angular Router instead of window.location
-          this.router.navigate(['/home']);
+          this.router.navigate(['/index']);
         } else {
-          this.errorMessage = "Giriş başarısız";
+          this.errorMessage = "Sunucudan geçerli bir yanıt alınamadı. Lütfen daha sonra tekrar deneyin.";
         }
       },
       error: (error) => {
