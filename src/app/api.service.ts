@@ -6,27 +6,27 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private url = "https://localhost:7011/"
+  private url = "https://localhost:7011"
   constructor(private http: HttpClient) { }
   getUserList(): Observable<any>{
-    return this.http.get<any>('${this.url}/GetUserList');
+    return this.http.get<any>(`${this.url}/GetUserList`);
   }
   register(user:any): Observable<any>{
-    return this.http.post<any>('${this.url}/Register',user);
+    return this.http.post<any>(`${this.url}/Register`,user);
   }
-  login(Loginmodel:any): Observable<any>{
-    return this.http.post<any>('${this.url}/login', Loginmodel)
+  login(loginModel:any): Observable<any>{
+    return this.http.post<any>(`${this.url}/login`, loginModel);
   }
-  getAllRestaurant(Restaurant:any): Observable<any>{
-    return this.http.get<any>('${this.url}/GetAllRestaurant')
+  getAllRestaurant(): Observable<any>{
+    return this.http.get<any>(`${this.url}/GetAllRestaurant`);
   }
-  getRestaurantByName(name:String): Observable<any>{
-    return this.http.get<any>('${this.url}/GetRestaurantByName/{name}')
+  getRestaurantByName(name:string): Observable<any>{
+    return this.http.get<any>(`${this.url}/GetRestaurantByName/${name}`);
   }
   getUserByName(name:string): Observable<any>{
-    return this.http.get<any>('${this.url}/GetUserByName/{name}')
+    return this.http.get<any>(`${this.url}/GetUserByName/${name}`);
   }
-  addRestaurant(Restaurant:any): Observable<any>{
-    return this.http.post<any>('${this.url}/AddRestaurant',Restaurant)
+  addRestaurant(restaurant:any): Observable<any>{
+    return this.http.post<any>(`${this.url}/AddRestaurant`,restaurant);
   }
 }

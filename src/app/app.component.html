@@ -3,16 +3,17 @@
       <img src="assets/images/logo.png" alt="Yemek23 Logo">
     </a>
     <nav class="navbar">
-      <a routerLink="/index" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Anasayfa</a>
-      <a routerLink="/restaurant" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Restoranlar</a>
-      <a routerLink="/favorite" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Favori Restoranlarım</a>
-      <a routerLink="/signin" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Giriş Yap</a>
-      <a routerLink="/register" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Kaydol</a>
+      <a [routerLink]="['/index']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}">Anasayfa</a>
+      <a [routerLink]="['/restaurant']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}">Restoranlar</a>
+      <a [routerLink]="['/favorite']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}">Favori Restoranlarım</a>
+      <a [routerLink]="['/signin']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}">Giriş Yap</a>
+      <a [routerLink]="['/register']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}">Kaydol</a>
     </nav>
     <div class="buttons">
-      <button id="search-btn">
+      <button id="search-btn" (click)="onSearch()">
         <i class="fas fa-search"></i>
       </button>
     </div>
   </header>
+  
   <router-outlet></router-outlet>

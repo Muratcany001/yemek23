@@ -7,6 +7,8 @@ body {
   margin: 0;
   background-color: #f0f0f0; /* Background color */
   font-family: 'Arial', sans-serif; /* Modern font */
+  height: 100%; /* Ensure body takes full height */
+  position: relative;
 }
 
 /* Container for Signin Form */
@@ -19,6 +21,10 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   box-sizing: border-box;
+  position: absolute; /* Absolute positioning to center the container */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the container both vertically and horizontally */
 }
 
 /* Title Styling */
@@ -85,25 +91,25 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .signin-form-container {
-      padding: 25px;
-      margin: 15px;
+    padding: 25px;
+    margin: 15px;
   }
 
   .signin-form-container h1 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .txt {
-      font-size: 14px;
-      padding: 12px;
+    font-size: 14px;
+    padding: 12px;
   }
 
   .signin-btn {
-      font-size: 16px;
-      padding: 12px;
+    font-size: 16px;
+    padding: 12px;
   }
 
   .signin-form-container a {
-      font-size: 13px;
+    font-size: 13px;
   }
 }
