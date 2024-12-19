@@ -49,16 +49,16 @@ export class RegisterComponent implements OnInit {
       User_Name: this.userName,
       User_Email: this.userEmail,
       User_Password: this.userPassword,
-      FavoriteRestaurantIds: [] // Backend için gerekli alan
+      FavoriteRestaurantIds: []
     };
   
-    console.log('Gönderilen kullanıcı:', user); // Hata ayıklama için
+    console.log('Gönderilen kullanıcı:', user);
   
     this.apiService.register(user).subscribe({
       next: (response) => {
         console.log('Kayıt başarılı:', response);
         alert('Kayıt başarılı!');
-        this.router.navigate(['/signin']); // Başarılı kayıt sonrası yönlendirme
+        this.router.navigate(['/signin']);
       },
       error: (error) => {
         console.error('Kayıt işlemi sırasında hata oluştu:', error);
