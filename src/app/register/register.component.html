@@ -40,7 +40,8 @@
       Şifre en az 6 karakter olmalıdır.
     </div>
 
-    <div class="error-msg" *ngIf="registerForm.submitted">
+    <!-- Hata mesajı burada gösterilecek -->
+    <div *ngIf="emailAlreadyExists" class="error-msg">
       Bu email adresi zaten kullanımda!
     </div>
 
